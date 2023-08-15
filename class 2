@@ -1,0 +1,13 @@
+filename = "data.asc"
+# with open(filename) as f:
+#     lines = f.readlines()
+#     for line in lines:
+#         print(line)
+
+import numpy as np
+import codecs
+
+with codecs.open(filename, encoding='utf-8-sig') as f:
+    X = np.loadtxt(f)
+
+print(X)

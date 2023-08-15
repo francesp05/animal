@@ -1,0 +1,15 @@
+pythonlist = []
+
+print(pythonlist)
+for x in range(10):
+    for y in range(10):
+        for z in range(10):
+            pythonlist.append([x,y,z])
+
+# for line in pythonlist: 
+#     print(line)
+
+magic = [1,5,9]
+for line in pythonlist: 
+    if line == magic:
+        print(line)
