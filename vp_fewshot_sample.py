@@ -4,6 +4,8 @@ from pygame.locals import *
 import os
 import random
 
+
+
 # Categories and images
 categories = ['cat', 'dog', 'turtle']
 images = {cat: [pygame.image.load(os.path.join(cat, img)) for img in os.listdir(cat)] for cat in categories}
