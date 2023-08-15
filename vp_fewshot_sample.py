@@ -3,6 +3,7 @@ import pygame
 from pygame.locals import *
 import os
 import random
+from save_function import *
 
 
 
@@ -132,6 +133,7 @@ while running:
             elif stage == 'testing':
                 # Check if one of category buttons is clicked
                 for i, button in enumerate(category_buttons):
+                    toggle3 = 0
                     if button.collidepoint(mouse_pos):
                         # Check if player's guess was correct
                         if categories[i] == category:
@@ -144,7 +146,9 @@ while running:
                     if button.collidepoint(mouse_pos):
                      guess = categories[i]
                      correct = (guess == category)
-                     results.append((category, guess, correct))  # Add this line
+                     if toggle3 == 0:
+                        results.append((category, guess, correct))
+                        toggle3 = 1
                      message = 'Correct!' if correct else f'Incorrect! It was a {category}'
                      stage = 'feedback'
                      break
@@ -232,8 +236,12 @@ while running:
         text = font.render('Game Over! Your accuracy: {:.2f}'.format(accuracy), True, (0, 0, 0))
         screen.blit(text, (20, 80))
 
-    print(results)
+    # print(results)
 
     pygame.display.flip()
 
 pygame.quit()
+
+print("\n",results)
+filename = save_stuff(results)
+print("\nData was successfully saved:", filename)

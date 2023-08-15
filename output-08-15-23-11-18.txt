@@ -1,0 +1,1 @@
+[('turtle', 'dog', False), ('dog', 'dog', True), ('dog', 'dog', True), ('cat', 'dog', False), ('turtle', 'dog', False), ('turtle', 'dog', False), ('cat', 'dog', False), ('cat', 'dog', False), ('dog', 'dog', True)]
